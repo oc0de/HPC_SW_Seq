@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Ehsan Valizadeh. All rights reserved.
 //
 
-
+#include "similarity_score_calculator.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -18,9 +18,7 @@ int main(int argc, const char * argv[]) {
     char *polymerase = read_file_content(
                                          "/Users/ehsan/Documents/Uni/HPC/HW02/HIV-1_Polymerase.txt");
     
-    
-    printf("The HIV sequence is ~> %s", sequence);
-    printf("The HIC polymerase is ~> %s", polymerase);
+    initialize(sequence, polymerase);
     
     free(sequence);
     free(polymerase);

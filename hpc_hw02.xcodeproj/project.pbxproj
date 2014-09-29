@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7CF0701119DA074E00B71333 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0701019DA074E00B71333 /* main.c */; };
 		7CF0701319DA074E00B71333 /* hpc_hw02.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7CF0701219DA074E00B71333 /* hpc_hw02.1 */; };
+		7CF0701A19DA1C4200B71333 /* similarity_score_calculator.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0701919DA1C4200B71333 /* similarity_score_calculator.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		7CF0700D19DA074D00B71333 /* hpc_hw02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hpc_hw02; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF0701019DA074E00B71333 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		7CF0701219DA074E00B71333 /* hpc_hw02.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = hpc_hw02.1; sourceTree = "<group>"; };
+		7CF0701919DA1C4200B71333 /* similarity_score_calculator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = similarity_score_calculator.c; sourceTree = "<group>"; };
+		7CF0701B19DA1C5A00B71333 /* similarity_score_calculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = similarity_score_calculator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				7CF0701019DA074E00B71333 /* main.c */,
+				7CF0701919DA1C4200B71333 /* similarity_score_calculator.c */,
+				7CF0701B19DA1C5A00B71333 /* similarity_score_calculator.h */,
 				7CF0701219DA074E00B71333 /* hpc_hw02.1 */,
 			);
 			path = hpc_hw02;
@@ -118,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CF0701119DA074E00B71333 /* main.c in Sources */,
+				7CF0701A19DA1C4200B71333 /* similarity_score_calculator.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
