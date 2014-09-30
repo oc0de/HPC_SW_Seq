@@ -22,6 +22,13 @@ void initialize_first_row();
 void initialize_first_column();
 void calculate_similarity();
 struct SimilarityMatrix* create_similarity_matrix();
+void  *similarity_measures(void *args);
+int match_mismatch_calculator(long row_index, long column_index);
+int vertical_gap_penalty(long row_index, long column_index);
+int horizontal_gap_penalty(long row_index, long column_index);
+int max(int numbers[]);
+int length(int *arr);
+
 
 
 

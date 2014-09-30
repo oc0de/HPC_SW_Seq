@@ -10,6 +10,11 @@
 #include "similarity_score_calculator.h"
 #include "similarity_matrix.h"
 
+
+#define MIN_VALUE 0
+
+///////////// Do not forget free malloc memory  ************
+
 void initialize(char *sequence, char *polymerase)
 {
     _sequence = sequence;
@@ -40,7 +45,7 @@ void set_initial_value_similarity_matrix()
     long j;
     for (i = 1; i < _row_numbers; i++) {
         for (j = 1; j < _column_numbers; j++) {
-            _similarity_matrix[i][j] = 0;  // ????????????
+            _similarity_matrix[i][j] = -1;  // ????????????
         }
     }
 }
@@ -63,11 +68,16 @@ void initialize_first_column()
 
 void calculate_similarity()
 {
-    int i;
     struct SimilarityMatrix* sim_matrix = create_similarity_matrix();
+    
+    int i;
     for (i = 1; i < _row_numbers; i++) {
-        sim_matrix->row_index = 1;
+        sim_matrix->row_index = i;
+        similarity_measures((void*)sim_matrix);
+        
     }
+    
+    
 }
 
 struct SimilarityMatrix* create_similarity_matrix() {
@@ -78,6 +88,70 @@ struct SimilarityMatrix* create_similarity_matrix() {
     
     return sim_matrix;
 }
+
+void *similarity_measures(void *arg)
+{
+    int neighbors_value[4];
+    neighbors_value[3] = MIN_VALUE;
+    struct SimilarityMatrix *simi_matrix = arg;
+    int i;
+    for (i = 1; i < simi_matrix->column_numbers; i++) {
+        neighbors_value[0] = match_mismatch_calculator(simi_matrix->row_index, i);
+        neighbors_value[1] = vertical_gap_penalty(simi_matrix->row_index, i);
+        neighbors_value[2] = horizontal_gap_penalty(simi_matrix->row_index, i);
+        
+        simi_matrix->matrix[simi_matrix->row_index][i] =
+        max(neighbors_value);
+                        
+    }
+    return 0;
+}
+
+
+int match_mismatch_calculator(long row_index, long column_index)
+{
+    if (_polymerase[row_index] == _sequence[column_index]) {
+        return _similarity_matrix[row_index - 1][column_index - 1] + 1;
+    }
+    
+    return _similarity_matrix[row_index - 1][column_index - 1] - 1;
+}
+
+int vertical_gap_penalty(long row_index, long column_index)
+{
+    return _similarity_matrix[row_index - 1][column_index] - 2;
+}
+
+int horizontal_gap_penalty(long row_index, long column_index)
+{
+    return _similarity_matrix[row_index][column_index - 1] - 2;
+}
+                        
+int max(int numbers[])
+{
+    int max = MIN_VALUE;
+    int i;
+    for (i = 0; i < length(numbers); i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+    }
+    return max;
+}
+
+int length(int *arr)
+{
+    int count = 0;
+    while (*arr != 0) {
+        ++count;
+        ++arr;
+    }
+    return count;
+}
+
+
+
+
 
 
 
