@@ -19,6 +19,8 @@ int main(int argc, const char * argv[]) {
                                          "/Users/ehsan/Documents/Uni/HPC/HW02/HIV-1_Polymerase.txt");
     
     initialize(sequence, polymerase);
+    initialize_similarity_matrix();
+
     
     free(sequence);
     free(polymerase);

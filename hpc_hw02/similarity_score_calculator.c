@@ -16,8 +16,47 @@ void initialize(char *sequence, char *polymerase)
     _column_numbers = strlen(_sequence) + 1;
     _polymerase = polymerase;
     _row_numbers = strlen(_polymerase) + 1;
-    
-    printf("column numbers ~> %ld\n", _column_numbers);
-    printf("row_numbers ~> %ld", _row_numbers);
 
+}
+
+void initialize_similarity_matrix()
+{
+    _similarity_matrix = (int**) malloc(_row_numbers * sizeof(int*));
+    
+    long i;
+    for (i = 0; i < _row_numbers; i++) {
+        _similarity_matrix[i] = (int*) malloc(_column_numbers * sizeof(int));
+    }
+    
+    set_initial_value_similarity_matrix();
+}
+
+
+void set_initial_value_similarity_matrix()
+{
+    initialize_first_row();
+    initialize_first_column();
+    long i;
+    long j;
+    for (i = 1; i < _row_numbers; i++) {
+        for (j = 1; j < _column_numbers; j++) {
+            _similarity_matrix[i][j] = 0;
+        }
+    }
+}
+
+void initialize_first_row()
+{
+    int i;
+    for (i = 0; i < _column_numbers; i++) {
+        _similarity_matrix[0][i] = 0;
+    }
+}
+
+void initialize_first_column()
+{
+    int i;
+    for (i = 0; i < _row_numbers; i++) {
+        _similarity_matrix[i][0] = 0;
+    }
 }

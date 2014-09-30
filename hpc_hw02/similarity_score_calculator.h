@@ -15,12 +15,19 @@
 #define hpc_hw02_similarity_score_calculator_h
 
 void initialize(char *sequence, char *polymerase);
+void initialize_similarity_matrix();
+void set_initial_value_similarity_matrix();
+void initialize_first_row();
+void initialize_first_column();
+
+
 
 
 char *_polymerase;
 char *_sequence;
 long _column_numbers;
 long _row_numbers;
+int **_similarity_matrix;
 
 
 
