@@ -28,6 +28,7 @@ int vertical_gap_penalty(long row_index, long column_index);
 int horizontal_gap_penalty(long row_index, long column_index);
 int max(int numbers[]);
 int length(int *arr);
+void print_similarity_matrix();
 
 
 
@@ -36,7 +37,7 @@ char *_polymerase;
 char *_sequence;
 long _column_numbers;
 long _row_numbers;
-int **_similarity_matrix;
+int** _similarity_matrix;
 
 
 

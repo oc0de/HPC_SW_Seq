@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "similarity_score_calculator.h"
 #include "similarity_matrix.h"
 
@@ -149,7 +150,19 @@ int length(int *arr)
     return count;
 }
 
-
+void print_similarity_matrix()
+{
+    long row_numbers = strlen(_polymerase) + 1;
+    long column_numbers = strlen(_sequence) + 1;
+    int i, j;
+    for (i = 0; i < row_numbers; i++) {
+        for (j = 0; j < column_numbers; j++) {
+            printf("%d \n", _similarity_matrix);
+        }
+    }
+    
+    free(_similarity_matrix);
+}
 
 
 

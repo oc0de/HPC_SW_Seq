@@ -14,13 +14,14 @@ char *read_file_content();
 
 int main(int argc, const char * argv[]) {
     char *sequence = read_file_content(
-                                       "/Users/ehsan/Documents/Uni/HPC/HW02/HIV-1_db.fasta.txt");
+                                       "/Users/ehsan/Documents/Uni/HPC/HW02/testSe.txt");
     char *polymerase = read_file_content(
-                                         "/Users/ehsan/Documents/Uni/HPC/HW02/HIV-1_Polymerase.txt");
+                                         "/Users/ehsan/Documents/Uni/HPC/HW02/testP.txt");
     
     initialize(sequence, polymerase);
     initialize_similarity_matrix();
     calculate_similarity();
+    print_similarity_matrix();
     
     free(sequence);
     free(polymerase);

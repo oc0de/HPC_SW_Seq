@@ -10,10 +10,10 @@
 #define hpc_hw02_similarity_matrix_h
 
 struct SimilarityMatrix {
-    int** matrix;
+    int  **matrix;
     long column_numbers;
     long row_numbers;
-    int row_index;
+    int  row_index;
 };
 
 #endif
