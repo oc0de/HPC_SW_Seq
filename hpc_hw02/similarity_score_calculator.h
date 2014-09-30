@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include "similarity_matrix.h"
 
 #ifndef hpc_hw02_similarity_score_calculator_h
 #define hpc_hw02_similarity_score_calculator_h
@@ -19,7 +20,8 @@ void initialize_similarity_matrix();
 void set_initial_value_similarity_matrix();
 void initialize_first_row();
 void initialize_first_column();
-
+void calculate_similarity();
+struct SimilarityMatrix* create_similarity_matrix();
 
 
 

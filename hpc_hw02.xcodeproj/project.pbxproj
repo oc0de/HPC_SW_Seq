@@ -26,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7C39A1A919DA619900527397 /* similarity_matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = similarity_matrix.h; sourceTree = "<group>"; };
 		7CF0700D19DA074D00B71333 /* hpc_hw02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hpc_hw02; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF0701019DA074E00B71333 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		7CF0701219DA074E00B71333 /* hpc_hw02.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = hpc_hw02.1; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 				7CF0701019DA074E00B71333 /* main.c */,
 				7CF0701919DA1C4200B71333 /* similarity_score_calculator.c */,
 				7CF0701B19DA1C5A00B71333 /* similarity_score_calculator.h */,
+				7C39A1A919DA619900527397 /* similarity_matrix.h */,
 				7CF0701219DA074E00B71333 /* hpc_hw02.1 */,
 			);
 			path = hpc_hw02;
@@ -233,6 +235,7 @@
 				7CF0701819DA074E00B71333 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

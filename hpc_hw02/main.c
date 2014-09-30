@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
     
     initialize(sequence, polymerase);
     initialize_similarity_matrix();
-
+    calculate_similarity();
     
     free(sequence);
     free(polymerase);

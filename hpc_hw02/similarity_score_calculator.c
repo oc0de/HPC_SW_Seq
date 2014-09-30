@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include "similarity_score_calculator.h"
-
+#include "similarity_matrix.h"
 
 void initialize(char *sequence, char *polymerase)
 {
@@ -40,7 +40,7 @@ void set_initial_value_similarity_matrix()
     long j;
     for (i = 1; i < _row_numbers; i++) {
         for (j = 1; j < _column_numbers; j++) {
-            _similarity_matrix[i][j] = 0;
+            _similarity_matrix[i][j] = 0;  // ????????????
         }
     }
 }
@@ -60,3 +60,26 @@ void initialize_first_column()
         _similarity_matrix[i][0] = 0;
     }
 }
+
+void calculate_similarity()
+{
+    int i;
+    struct SimilarityMatrix* sim_matrix = create_similarity_matrix();
+    for (i = 1; i < _row_numbers; i++) {
+        sim_matrix->row_index = 1;
+    }
+}
+
+struct SimilarityMatrix* create_similarity_matrix() {
+    struct SimilarityMatrix* sim_matrix = malloc(sizeof(struct SimilarityMatrix));
+    sim_matrix->matrix = _similarity_matrix;
+    sim_matrix->row_numbers = _row_numbers;
+    sim_matrix->column_numbers = _column_numbers;
+    
+    return sim_matrix;
+}
+
+
+
+
+
